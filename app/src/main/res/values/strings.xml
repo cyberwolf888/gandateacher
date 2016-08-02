@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Ganda Teacher</string>
+
+    <!-- Validation String -->
+    <string name="id_error_password_empty">Password tidak boleh kosong</string>
+    <string name="id_error_passowrd_length">Password terlalu pendek</string>
+    <string name="id_error_email_empty">Email tidak boleh kosong</string>
+    <string name="id_error_email_invalid">Alamat email anda salah</string>
+    <string name="id_error_network">Tidak dapat tersambung dengan server!</string>
+    <string name="id_error_login">Login gagal. Email atau password tidak cocok.</string>
+
+    <string name="en_error_password_empty">Ppassword cannot be empty</string>
+    <string name="en_error_passowrd_length">Password is too short</string>
+    <string name="en_error_email_empty">Email cannot be empty</string>
+    <string name="en_error_email_invalid">Your email is invalid</string>
+    <string name="en_error_network">Can\'t connect to server!</string>
+    <string name="en_error_login">Failed to login. Email or password not match.</string>
+    <!-- End -->
 </resources>
