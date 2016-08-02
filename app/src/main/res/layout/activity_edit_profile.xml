@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/latar"
+    android:padding="10dp"
+    tools:context="com.gandaedukasi.gandateacher.EditProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/cardView"
+            android:background="@color/cardview_light_background"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/guest"
+                android:id="@+id/teacherPhoto"
+                android:layout_marginTop="5dp"
+                />
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:id="@+id/teacherName"
+                android:text="I Nyoman Swantara"
+                android:textColor="#000000"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="110dp"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/btnSave"
+                android:src="@drawable/pen_black"
+                android:layout_gravity="bottom|right"
+                android:layout_marginBottom="17dp"
+                android:layout_marginRight="17dp"
+                />
+        </android.support.v7.widget.CardView>
+
+        //Phone
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/cardView"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Phone"
+            android:text="No. Telp"
+            android:layout_below="@+id/separator1"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacherPhone"
+            android:text="085338328908"
+            android:layout_below="@+id/Phone"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorNormalWhite"
+            />
+
+        //Education
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/teacherPhone"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator2"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Edu"
+            android:text="Pendidikan Terakhir"
+            android:layout_below="@+id/separator2"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacherEdu"
+            android:text="Sarjana Komputer"
+            android:layout_below="@+id/Edu"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorNormalWhite"
+            />
+
+        //Address
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/teacherEdu"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator3"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Address"
+            android:text="Alamat"
+            android:layout_below="@+id/separator3"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacherAddress"
+            android:text="Jl. Raya Puputan Renon No. 86"
+            android:layout_below="@+id/Address"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorNormalWhite"
+            />
+
+        //Lecture
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/teacherAddress"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator4"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Lecture"
+            android:text="Bidang Ajar"
+            android:layout_below="@+id/separator4"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacherLecture"
+            android:text="Matematika, IPA"
+            android:layout_below="@+id/Lecture"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorNormalWhite"
+            />
+
+        //Level
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/teacherLecture"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator5"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Level"
+            android:text="Jenjang Ajar"
+            android:layout_below="@+id/separator5"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacherLevel"
+            android:text="SD, SMP"
+            android:layout_below="@+id/Level"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorNormalWhite"
+            />
+
+        //Zone
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/teacherLevel"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator6"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Zone"
+            android:text="Zona Cabang"
+            android:layout_below="@+id/separator6"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacherZone"
+            android:text="Subita"
+            android:layout_below="@+id/Zone"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorNormalWhite"
+            />
+    </RelativeLayout>
+    
+</ScrollView>
