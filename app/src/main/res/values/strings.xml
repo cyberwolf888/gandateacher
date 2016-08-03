@@ -8,6 +8,13 @@
     <string name="id_error_email_invalid">Alamat email anda salah</string>
     <string name="id_error_network">Tidak dapat tersambung dengan server!</string>
     <string name="id_error_login">Login gagal. Email atau password tidak cocok.</string>
+    <string name="id_error_nama_empty">Nama lengkap tidak boleh kosong</string>
+    <string name="id_error_nama_invalid">Nama lengkap tidak valid</string>
+    <string name="id_error_telp_empty">No. Telp tidak boleh kosong</string>
+    <string name="id_error_edu_empty">Pendidikan terakhir tidak boleh kosong</string>
+    <string name="id_error_alamat_empty">Alamat tidak boleh kosong</string>
+    <string name="id_error_register">Register gagal! Email atau No.Telp sudah digunakan</string>
+    <string name="id_success_register">Register berhasil! Mohon cek inbox email anda untuk verifikasi account!</string>
 
     <string name="en_error_password_empty">Ppassword cannot be empty</string>
     <string name="en_error_passowrd_length">Password is too short</string>
@@ -15,5 +22,12 @@
     <string name="en_error_email_invalid">Your email is invalid</string>
     <string name="en_error_network">Can\'t connect to server!</string>
     <string name="en_error_login">Failed to login. Email or password not match.</string>
+    <string name="en_error_nama_empty">Fullname cannot be empty</string>
+    <string name="en_error_nama_invalid">Fullname is invalid</string>
+    <string name="em_error_telp_empty">No. Telp cannot be empty</string>
+    <string name="en_error_edu_empty">Last degree cannot be empty</string>
+    <string name="en_error_alamat_empty">Address cannot be empty</string>
+    <string name="en_error_register">Register failed! Email or No.Telp already used</string>
+    <string name="en_success_register">Register success! Please check your inbox to verify your account!</string>
     <!-- End -->
 </resources>

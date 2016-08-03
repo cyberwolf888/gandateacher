@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/latar"
+    android:padding="10dp"
+    tools:context="com.gandaedukasi.gandateacher.EditProfileActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        //nama lengkap
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutNamaLengkap">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Lengkap"
+                android:id="@+id/teacherName"
+                android:inputType="text"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        //Email
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/layoutNamaLengkap"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator12"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/separator12"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutUsername">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:id="@+id/editEmail"
+                android:inputType="textEmailAddress"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite"/>
+        </android.support.design.widget.TextInputLayout>
+
+        //Password
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/layoutUsername"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator13"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/separator13"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutPassword">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:id="@+id/editPassword"
+                android:inputType="textPassword"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite"/>
+        </android.support.design.widget.TextInputLayout>
+
+        //Phone
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/layoutPassword"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator1"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/separator1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutPhone">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="No. Telp"
+                android:id="@+id/teacherPhone"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        //Education
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/layoutPhone"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator2"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/separator2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutEdu">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Pendidikan Terakhir"
+                android:id="@+id/teacherEdu"
+                android:inputType="text"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        //Address
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/layoutEdu"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator3"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/separator3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutAddress">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Alamat"
+                android:id="@+id/teacherAddress"
+                android:inputType="text"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        //Zone
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/layoutAddress"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator6"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Zone"
+            android:text="Zona Cabang"
+            android:layout_below="@+id/separator6"
+            android:layout_marginTop="10dp"
+            />
+
+        <Spinner
+            android:id="@+id/teacherZone"
+            android:layout_below="@+id/Zone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorNormalWhite"
+            />
+        <!--
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teacherZone"
+            android:text="Subita"
+            android:layout_below="@+id/Zone"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"
+            android:textColor="@color/colorNormalWhite"
+            />
+            -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonReg"
+            android:text="Register"
+            android:layout_below="@+id/teacherZone"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:layout_marginTop="30dp"
+            android:gravity="center" />
+    </RelativeLayout>
+
+</ScrollView>

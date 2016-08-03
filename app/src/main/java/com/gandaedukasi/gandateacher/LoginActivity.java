@@ -51,8 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         btnReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(i);
             }
         });
     }
@@ -118,7 +118,11 @@ public class LoginActivity extends AppCompatActivity {
                                     if (status.equals("1")){
                                         JsonObject data = result.getAsJsonObject("data");
                                         Log.d("Response",">"+data);
-                                        session.createLoginSession(data.get("user_id").getAsString(),data.get("fullname").getAsString(),data.get("photo").getAsString());
+                                        String photo = "";
+                                        if(!data.get("photo").isJsonNull()){
+                                            photo = data.get("photo").getAsString();
+                                        }
+                                        session.createLoginSession(data.get("user_id").getAsString(),data.get("fullname").getAsString(),photo);
                                         Intent i = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(i);
                                         finish();
