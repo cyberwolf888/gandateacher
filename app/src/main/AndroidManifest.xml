@@ -28,7 +28,9 @@
         <activity android:name=".DetailSubmitActivity" />
         <activity android:name=".DetailJadwalActivity" />
         <activity android:name=".EditProfileActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".TingkatPendidikanActivity" />
+        <activity android:name=".MapelPengajarActivity"></activity>
     </application>
 
 </manifest>

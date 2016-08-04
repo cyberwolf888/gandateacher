@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Ganda Teacher</string>
-
+    <color name="themecolor">#fd482f</color>
     <!-- Validation String -->
     <string name="id_error_password_empty">Password tidak boleh kosong</string>
     <string name="id_error_passowrd_length">Password terlalu pendek</string>
@@ -15,6 +15,7 @@
     <string name="id_error_alamat_empty">Alamat tidak boleh kosong</string>
     <string name="id_error_register">Register gagal! Email atau No.Telp sudah digunakan</string>
     <string name="id_success_register">Register berhasil! Mohon cek inbox email anda untuk verifikasi account!</string>
+    <string name="id_pilih_tingkat_pendidikan_empty">Silahkan pilih tingkat pendidikan yang ingin anda ajar!</string>
 
     <string name="en_error_password_empty">Ppassword cannot be empty</string>
     <string name="en_error_passowrd_length">Password is too short</string>
@@ -29,5 +30,6 @@
     <string name="en_error_alamat_empty">Address cannot be empty</string>
     <string name="en_error_register">Register failed! Email or No.Telp already used</string>
     <string name="en_success_register">Register success! Please check your inbox to verify your account!</string>
+    <string name="en_pilih_tingkat_pendidikan_empty">Silahkan pilih tingkat pendidikan yang ingin anda ajar!</string>
     <!-- End -->
 </resources>
