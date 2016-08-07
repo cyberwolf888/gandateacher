@@ -231,12 +231,14 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                                 } catch (Exception ex){
                                     Toast.makeText(getApplicationContext(), getString(R.string.id_error_network), Toast.LENGTH_LONG).show();
                                 }
+                                pDialog.dismiss();
                             }
                         });
             }else{
                 Toast.makeText(getApplicationContext(), getString(R.string.id_error_network), Toast.LENGTH_LONG).show();
+                pDialog.dismiss();
             }
-            pDialog.dismiss();
+
         }
     }
 

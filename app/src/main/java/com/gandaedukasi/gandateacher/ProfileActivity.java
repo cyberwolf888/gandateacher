@@ -1,10 +1,12 @@
 package com.gandaedukasi.gandateacher;
 
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -61,6 +63,7 @@ public class ProfileActivity extends AppCompatActivity {
                 String alamat = teacherAddress.getText().toString();
                 String label_tingkat_pendidikan = teacherTingkatPendidikan.getText().toString();
                 String label_mapel = teacherMapel.getText().toString();
+                String zona = teacherZona.getText().toString();
 
                 Intent i = new Intent(ProfileActivity.this, EditProfileActivity.class);
                 i.putExtra("name", name);
@@ -73,9 +76,18 @@ public class ProfileActivity extends AppCompatActivity {
                 i.putExtra("id_tingkat_pendidikan", id_tingkat_pendidikan);
                 i.putExtra("id_mapel", id_mapel);
                 i.putExtra("photo", photo);
+                i.putExtra("zona", zona);
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(ProfileActivity.this, MainActivity.class);
+        ComponentName cn = i.getComponent();
+        Intent mainIntent = IntentCompat.makeRestartActivityTask(cn);
+        startActivity(mainIntent);
     }
 
     public void onResume(){
@@ -120,8 +132,8 @@ public class ProfileActivity extends AppCompatActivity {
                                     }else{
                                         photo = data.get("photo").getAsString();
                                     }
-                                    Ion.with(teacherPhoto)
-                                            .load("http://gandaedukasi.esy.es/images/article/image1.png");
+                                    String url_photo = new RequestServer().getPhotoUrl()+"/pengajar/"+photo;
+                                    Ion.with(teacherPhoto).load(url_photo);
                                 }else{
                                     //TODO jika status 0
                                 }

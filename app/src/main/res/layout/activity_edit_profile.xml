@@ -186,7 +186,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/teacherTingkatPendidikan"
-            android:text="SMA, SMK, SD"
             android:inputType="text"
             android:layout_below="@+id/TingkatPendidikan"
             android:textSize="18dp"
@@ -216,7 +215,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/teacherMapel"
-            android:text="Matematika - SD, English - SMA"
             android:inputType="text"
             android:layout_below="@+id/MapelPengajar"
             android:textSize="18dp"
@@ -242,12 +240,15 @@
             android:layout_below="@+id/separator6"
             android:layout_marginTop="10dp"
             />
-
-        <Spinner
-            android:id="@+id/teacherZone"
-            android:layout_below="@+id/Zone"
-            android:layout_width="fill_parent"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/teacherZone"
+            android:inputType="text"
+            android:layout_below="@+id/Zone"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/colorNormalWhite"
             />
         <!--
