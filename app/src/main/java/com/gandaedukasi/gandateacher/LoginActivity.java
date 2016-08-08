@@ -102,6 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                 JsonObject jsonReq = new JsonObject();
                 jsonReq.addProperty("email", email);
                 jsonReq.addProperty("password", password);
+                jsonReq.addProperty("type", "PG");
 
                 Ion.with(LoginActivity.this)
                         .load(url)
