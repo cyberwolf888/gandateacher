@@ -131,9 +131,10 @@ public class ProfileActivity extends AppCompatActivity {
                                         photo = "";
                                     }else{
                                         photo = data.get("photo").getAsString();
+                                        String url_photo = new RequestServer().getPhotoUrl()+"/pengajar/"+photo;
+                                        Ion.with(teacherPhoto).load(url_photo);
                                     }
-                                    String url_photo = new RequestServer().getPhotoUrl()+"/pengajar/"+photo;
-                                    Ion.with(teacherPhoto).load(url_photo);
+
                                 }else{
                                     //TODO jika status 0
                                 }

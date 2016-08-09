@@ -124,10 +124,20 @@ public class EditProfileActivity extends AppCompatActivity {
             cursor.moveToFirst();
             imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
 
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-            Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);
-            teacherPhoto.setImageBitmap(bitmap);
+            //Cek file size
+            File file = new File(imagePath);
+            int file_size = Integer.parseInt(String.valueOf(file.length()/1024));
+            Log.d("File Size",">"+file_size);
+            if(file_size>(1.5*1024)){
+                //TODO jika gambar terlalu besar
+                imagePath = "";
+                Toast.makeText(getApplicationContext(), "Ukuran gambar terlalu besar. Ukuran file maksimal 1.5 MB", Toast.LENGTH_LONG).show();
+            }else{
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);
+                teacherPhoto.setImageBitmap(bitmap);
+            }
 
             cursor.close();
         }
