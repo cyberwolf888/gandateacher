@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/latar"
+    android:padding="10dp"
+    tools:context="com.gandaedukasi.gandateacher.EditProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        //Mapel
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Mapel"
+            android:text="Mata Pelajaran"
+            android:layout_marginTop="10dp"
+            />
+        <Spinner
+            android:id="@+id/inputMapel"
+            android:layout_below="@+id/Mapel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorNormalWhite"
+            android:textColorHint="@color/colorNormalWhite"
+            android:textColorHighlight="@color/colorNormalWhite"
+            />
+
+        //Hari
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/inputMapel"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator1"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Hari"
+            android:layout_below="@+id/separator1"
+            android:text="Hari"
+            android:layout_marginTop="10dp"
+            />
+        <Spinner
+            android:id="@+id/inputHari"
+            android:layout_below="@+id/Hari"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorNormalWhite"
+            android:textColorHint="@color/colorNormalWhite"
+            android:textColorHighlight="@color/colorNormalWhite"
+            />
+
+        //Wwaktu Mulai
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/inputHari"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator2"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/separator2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutWaktuMulai">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Waktu Mulai"
+                android:id="@+id/inputWaktuMulai"
+                android:inputType="time"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        //Wwaktu Selesai
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorNormalWhite"
+            android:layout_below="@+id/layoutWaktuMulai"
+            android:layout_marginTop="10dp"
+            android:id="@+id/separator3"
+            />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/separator3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutWaktuSelesai">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Waktu Selesai"
+                android:id="@+id/inputWaktuSelesai"
+                android:inputType="time"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonAdd"
+            android:text="Tambah"
+            android:layout_below="@+id/layoutWaktuSelesai"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:layout_marginTop="30dp"
+            android:gravity="center" />
+    </RelativeLayout>
+
+</ScrollView>

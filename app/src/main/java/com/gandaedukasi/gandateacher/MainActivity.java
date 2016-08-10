@@ -3,6 +3,7 @@ package com.gandaedukasi.gandateacher;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import com.koushikdutta.ion.Ion;
 public class MainActivity extends AppCompatActivity {
     Session session;
     ProgressDialog pDialog;
+    ImageView btnRequestMengajar, btnSubmitPertemuan, btnJadwalLes, btnLihatPertemuan, btnProfile,btnAddJadwal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,13 +38,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        ImageView btnRequestMengajar, btnSubmitPertemuan, btnJadwalLes, btnLihatPertemuan, btnProfile;
-
         btnRequestMengajar = (ImageView)findViewById(R.id.btnRequestMengajar);
         btnSubmitPertemuan = (ImageView)findViewById(R.id.btnSubmitPertemuan);
         btnJadwalLes = (ImageView)findViewById(R.id.btnJadwalLes);
         btnLihatPertemuan = (ImageView)findViewById(R.id.btnLihatPertemuan);
         btnProfile = (ImageView)findViewById(R.id.btnProfile);
+        btnAddJadwal = (ImageView) findViewById(R.id.btnAddJadwal);
 
         btnRequestMengajar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnAddJadwal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, KetersediaanJadwalActivity.class);
                 startActivity(i);
             }
         });
