@@ -2,10 +2,12 @@ package com.gandaedukasi.gandateacher;
 
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -178,6 +180,13 @@ public class TambahJadwalActivity extends AppCompatActivity {
             startActivity(i);
             finish();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(TambahJadwalActivity.this, KetersediaanJadwalActivity.class);
+        startActivity(i);
+        finish();
     }
 
     public void tambahJadwal(){
