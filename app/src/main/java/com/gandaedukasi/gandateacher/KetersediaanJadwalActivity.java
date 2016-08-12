@@ -97,7 +97,8 @@ public class KetersediaanJadwalActivity extends AppCompatActivity {
                                                 objData.get("label_mapel").getAsString(),
                                                 objData.get("jam_mulai").getAsString(),
                                                 objData.get("jam_selesai").getAsString(),
-                                                objData.get("label_hari").getAsString()
+                                                objData.get("label_hari").getAsString(),
+                                                objData.get("status").getAsString()
                                                 ));
                                     }
                                     mAdapter = new KetersedianJadwalAdapter(KetersediaanJadwalActivity.this, ketersediaanJadwals);

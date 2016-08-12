@@ -13,8 +13,9 @@ public class KetersedianJadwal {
     public String waktu_mulai;
     public String waktu_selesai;
     public String hari;
+    public String status;
 
-    public KetersedianJadwal(String jadwal_id, String mapel_id, String zona_id, String label_cabang, String label_mapel, String waktu_mulai, String waktu_selesai, String hari){
+    public KetersedianJadwal(String jadwal_id, String mapel_id, String zona_id, String label_cabang, String label_mapel, String waktu_mulai, String waktu_selesai, String hari, String status){
         this.jadwal_id = jadwal_id;
         this.mapel_id = mapel_id;
         this.zona_id = zona_id;
@@ -23,5 +24,10 @@ public class KetersedianJadwal {
         this.waktu_mulai = waktu_mulai;
         this.waktu_selesai = waktu_selesai;
         this.hari = hari;
+        this.status = status;
+    }
+
+    public void setStatus(String status){
+        this.status = status;
     }
 }
