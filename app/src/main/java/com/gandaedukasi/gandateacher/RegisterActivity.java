@@ -41,12 +41,12 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        teacherZone = (Spinner) findViewById(R.id.teacherZone);
-        teacherZone.setOnItemSelectedListener(this);
+        //teacherZone = (Spinner) findViewById(R.id.teacherZone);
+        //teacherZone.setOnItemSelectedListener(this);
 
-        dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listZone);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        teacherZone.setAdapter(dataAdapter);
+        //dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listZone);
+        //dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //teacherZone.setAdapter(dataAdapter);
 
         teacherName = (EditText) findViewById(R.id.teacherName);
         editEmail = (EditText) findViewById(R.id.editEmail);
@@ -67,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onStart(){
         super.onStart();
+        /*
         pDialog = new ProgressDialog(RegisterActivity.this);
         pDialog.setMessage("Loading...");
         pDialog.setIndeterminate(false);
@@ -112,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             Toast.makeText(getApplicationContext(), getString(R.string.id_error_network), Toast.LENGTH_LONG).show();
             pDialog.dismiss();
         }
-
+        */
     }
 
     private void attemptRegister() {
@@ -129,7 +130,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         String telp = teacherPhone.getText().toString();
         String edukasi = teacherEdu.getText().toString();
         String alamat = teacherAddress.getText().toString();
-        String zona = teacherZone.getSelectedItem().toString();
+        //String zona = teacherZone.getSelectedItem().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -207,7 +208,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             jsonReq.addProperty("telp", telp);
             jsonReq.addProperty("edukasi", edukasi);
             jsonReq.addProperty("alamat", alamat);
-            jsonReq.addProperty("zona", zona);
+            //jsonReq.addProperty("zona", zona);
             Log.d("Request",">"+jsonReq);
             if(isNetworkAvailable()){
                 Ion.with(RegisterActivity.this)

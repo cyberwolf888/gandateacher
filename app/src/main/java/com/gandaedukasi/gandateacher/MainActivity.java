@@ -64,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         btnJadwalLes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, KetersediaanJadwalActivity.class);
-                startActivity(i);
+                //Intent i = new Intent(MainActivity.this, KetersediaanJadwalActivity.class);
+                //startActivity(i);
             }
         });
 
@@ -85,13 +85,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAddJadwal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, TambahJadwalActivity.class);
-                startActivity(i);
-            }
-        });
     }
 
     private void cekProfile(){
@@ -140,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         }else {
             Toast.makeText(getApplicationContext(), getString(R.string.id_error_network), Toast.LENGTH_LONG).show();
+            finish();
         }
 
     }

@@ -171,6 +171,7 @@
                 android:textColorHighlight="@color/colorNormalWhite" />
         </android.support.design.widget.TextInputLayout>
 
+        <!--
         //Zone
         <View
             android:layout_width="match_parent"
@@ -188,7 +189,6 @@
             android:layout_below="@+id/separator6"
             android:layout_marginTop="10dp"
             />
-
         <Spinner
             android:id="@+id/teacherZone"
             android:layout_below="@+id/Zone"
@@ -196,6 +196,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorNormalWhite"
             />
+            -->
         <!--
         <EditText
             android:layout_width="wrap_content"
@@ -214,7 +215,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/buttonReg"
             android:text="Register"
-            android:layout_below="@+id/teacherZone"
+            android:layout_below="@+id/layoutAddress"
             android:layout_centerHorizontal="true"
             android:textSize="18dp"
             android:textColor="@color/colorPrimary"

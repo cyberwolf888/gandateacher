@@ -1,10 +1,12 @@
 package com.gandaedukasi.gandateacher;
 
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -109,6 +111,14 @@ public class TingkatPendidikanActivity extends AppCompatActivity {
     }
     public void onStart(){
         super.onStart();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(TingkatPendidikanActivity.this, MainActivity.class);
+        ComponentName cn = i.getComponent();
+        Intent mainIntent = IntentCompat.makeRestartActivityTask(cn);
+        startActivity(mainIntent);
     }
 
     public boolean isNetworkAvailable() {
