@@ -3,6 +3,7 @@ package com.gandaedukasi.gandateacher;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -63,7 +64,14 @@ public class RequestActivity extends AppCompatActivity {
             pDialog = new ProgressDialog(RequestActivity.this);
             pDialog.setMessage("Loading...");
             pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
+            pDialog.setCancelable(true);
+            pDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    Toast.makeText(getApplicationContext(), "Proses dibatalkan!", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+            });
             pDialog.show();
 
             requestJadwal = new ArrayList<>();

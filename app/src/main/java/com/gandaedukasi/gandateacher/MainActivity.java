@@ -24,7 +24,7 @@ import com.koushikdutta.ion.Ion;
 public class MainActivity extends AppCompatActivity {
     Session session;
     ProgressDialog pDialog;
-    ImageView btnRequestMengajar, btnSubmitPertemuan, btnJadwalLes, btnLihatPertemuan, btnProfile,btnAddJadwal;
+    ImageView btnRequestMengajar, btnSubmitPertemuan, btnJadwalLes, btnLihatPertemuan, btnProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         btnJadwalLes = (ImageView)findViewById(R.id.btnJadwalLes);
         btnLihatPertemuan = (ImageView)findViewById(R.id.btnLihatPertemuan);
         btnProfile = (ImageView)findViewById(R.id.btnProfile);
-        btnAddJadwal = (ImageView) findViewById(R.id.btnAddJadwal);
 
         btnRequestMengajar.setOnClickListener(new View.OnClickListener() {
             @Override

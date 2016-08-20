@@ -47,13 +47,5 @@
         android:src="@drawable/tile_profil"
         android:layout_marginLeft="25dp"
         />
-    <ImageView
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:id="@+id/btnAddJadwal"
-        android:layout_toRightOf="@+id/btnProfile"
-        android:layout_below="@+id/btnLihatPertemuan"
-        android:src="@drawable/tile_jadwal_les"
-        android:layout_marginLeft="10dp"
-        />
+
 </RelativeLayout>
