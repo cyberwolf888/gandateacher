@@ -126,7 +126,15 @@ public class PertemuanActivity extends AppCompatActivity {
                                             .setIcon(android.R.drawable.ic_dialog_alert)
                                             .setTitle("Kosong!")
                                             .setMessage("Pertemuan sedang kosong")
-                                            .setNegativeButton("Cancel",null)
+                                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    Intent i = new Intent(PertemuanActivity.this, MainActivity.class);
+                                                    ComponentName cn = i.getComponent();
+                                                    Intent mainIntent = IntentCompat.makeRestartActivityTask(cn);
+                                                    startActivity(mainIntent);
+                                                }
+                                            })
                                             .show();
                                     //Toast.makeText(getApplicationContext(), "Jadwal sedang kosong", Toast.LENGTH_LONG).show();
                                 }

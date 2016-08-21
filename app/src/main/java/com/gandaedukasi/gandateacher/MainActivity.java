@@ -2,6 +2,7 @@ package com.gandaedukasi.gandateacher;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.Image;
 import android.net.ConnectivityManager;
@@ -63,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         btnJadwalLes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(MainActivity.this, KetersediaanJadwalActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(MainActivity.this, JadwalActivity.class);
+                startActivity(i);
             }
         });
 
@@ -91,7 +92,14 @@ public class MainActivity extends AppCompatActivity {
             pDialog = new ProgressDialog(MainActivity.this);
             pDialog.setMessage("Loading...");
             pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
+            pDialog.setCancelable(true);
+            pDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    Toast.makeText(getApplicationContext(), "Proses dibatalkan!", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+            });
             pDialog.show();
 
             String url = new RequestServer().getServer_url()+"cekProfilePengajar";

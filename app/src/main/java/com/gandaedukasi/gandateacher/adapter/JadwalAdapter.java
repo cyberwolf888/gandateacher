@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.gandaedukasi.gandateacher.DetailJadwalActivity;
 import com.gandaedukasi.gandateacher.DetailSubmitActivity;
 import com.gandaedukasi.gandateacher.R;
-import com.gandaedukasi.gandateacher.models.RequestJadwal;
-import com.gandaedukasi.gandateacher.models.SubmitJadwal;
+import com.gandaedukasi.gandateacher.models.Jadwal;
 import com.gandaedukasi.gandateacher.utility.RequestServer;
 import com.koushikdutta.ion.Ion;
 
@@ -23,9 +23,9 @@ import java.util.List;
  * Created by Karen on 8/20/2016.
  */
 
-public class SubmitJadwalAdapter extends RecyclerView.Adapter<SubmitJadwalAdapter.SubmitJadwalViewHolder> {
+public class JadwalAdapter extends RecyclerView.Adapter<JadwalAdapter.JadwalViewHolder> {
 
-    public class SubmitJadwalViewHolder extends RecyclerView.ViewHolder {
+    public class JadwalViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
         TextView studentName;
         TextView studentLecture;
@@ -35,9 +35,9 @@ public class SubmitJadwalAdapter extends RecyclerView.Adapter<SubmitJadwalAdapte
         TextView pertemuan;
         ImageView imageStudent;
 
-        public SubmitJadwalViewHolder(View itemView) {
+        public JadwalViewHolder(View itemView) {
             super(itemView);
-            cv = (CardView)itemView.findViewById(R.id.cvSubmitJadwal);
+            cv = (CardView)itemView.findViewById(R.id.cvJadwal);
             studentName = (TextView)itemView.findViewById(R.id.studentName);
             studentLecture = (TextView)itemView.findViewById(R.id.studentLecture);
             tgl_pertemuan = (TextView)itemView.findViewById(R.id.tgl_pertemuan);
@@ -49,9 +49,9 @@ public class SubmitJadwalAdapter extends RecyclerView.Adapter<SubmitJadwalAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    final SubmitJadwal feedItem = listItems.get(getAdapterPosition());
+                    final Jadwal feedItem = listItems.get(getAdapterPosition());
                     final int position = getAdapterPosition();
-                    Intent i = new Intent(mContext, DetailSubmitActivity.class);
+                    Intent i = new Intent(mContext, DetailJadwalActivity.class);
                     i.putExtra("jadwal_id",feedItem.jadwal_id);
                     i.putExtra("detail_jadwal_id",feedItem.detail_jadwal_id);
                     i.putExtra("nama_siswa",feedItem.nama_siswa);
@@ -69,10 +69,10 @@ public class SubmitJadwalAdapter extends RecyclerView.Adapter<SubmitJadwalAdapte
 
     }
 
-    List<SubmitJadwal> listItems;
+    List<Jadwal> listItems;
     private Context mContext;
 
-    public SubmitJadwalAdapter(Context context, List<SubmitJadwal> listItems){
+    public JadwalAdapter(Context context, List<Jadwal> listItems){
         this.listItems = listItems;
         this.mContext = context;
     }
@@ -83,30 +83,30 @@ public class SubmitJadwalAdapter extends RecyclerView.Adapter<SubmitJadwalAdapte
     }
 
     @Override
-    public SubmitJadwalViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_submit_jadwal, viewGroup, false);
-        SubmitJadwalViewHolder rjvh = new SubmitJadwalViewHolder(v);
+    public JadwalViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_jadwal, viewGroup, false);
+        JadwalViewHolder rjvh = new JadwalViewHolder(v);
         return rjvh;
     }
 
     @Override
-    public void onBindViewHolder(SubmitJadwalViewHolder submitJadwalViewHolder, int i) {
-        submitJadwalViewHolder.studentName.setText(listItems.get(i).nama_siswa);
-        submitJadwalViewHolder.studentLecture.setText(listItems.get(i).label_mapel);
-        submitJadwalViewHolder.tgl_pertemuan.setText(listItems.get(i).label_tanggal);
-        submitJadwalViewHolder.waktu_pertemuan.setText(listItems.get(i).label_waktu);
-        submitJadwalViewHolder.tempat_pertemuan.setText(listItems.get(i).label_tempat);
-        submitJadwalViewHolder.pertemuan.setText("Pertemuan ke "+listItems.get(i).pertemuan);
+    public void onBindViewHolder(JadwalViewHolder jadwalViewHolder, int i) {
+        jadwalViewHolder.studentName.setText(listItems.get(i).nama_siswa);
+        jadwalViewHolder.studentLecture.setText(listItems.get(i).label_mapel);
+        jadwalViewHolder.tgl_pertemuan.setText(listItems.get(i).label_tanggal);
+        jadwalViewHolder.waktu_pertemuan.setText(listItems.get(i).label_waktu);
+        jadwalViewHolder.tempat_pertemuan.setText(listItems.get(i).label_tempat);
+        jadwalViewHolder.pertemuan.setText("Pertemuan ke "+listItems.get(i).pertemuan);
 
         if(listItems.get(i).photo.equals("")){
-            submitJadwalViewHolder.imageStudent.setImageResource(R.drawable.guest);
+            jadwalViewHolder.imageStudent.setImageResource(R.drawable.guest);
         }else{
             Ion.with(mContext)
                     .load(new RequestServer().getPhotoUrl()+"siswa/"+listItems.get(i).photo)
                     .withBitmap()
                     .placeholder(R.drawable.guest)
                     .error(R.drawable.guest)
-                    .intoImageView(submitJadwalViewHolder.imageStudent);
+                    .intoImageView(jadwalViewHolder.imageStudent);
         }
     }
 

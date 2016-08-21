@@ -121,7 +121,15 @@ public class SubmitActivity extends AppCompatActivity {
                                             .setIcon(android.R.drawable.ic_dialog_alert)
                                             .setTitle("Kosong!")
                                             .setMessage("Jadwal sedang kosong")
-                                            .setNegativeButton("Cancel",null)
+                                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    Intent i = new Intent(SubmitActivity.this, MainActivity.class);
+                                                    ComponentName cn = i.getComponent();
+                                                    Intent mainIntent = IntentCompat.makeRestartActivityTask(cn);
+                                                    startActivity(mainIntent);
+                                                }
+                                            })
                                             .show();
                                     //Toast.makeText(getApplicationContext(), "Jadwal sedang kosong", Toast.LENGTH_LONG).show();
                                 }
