@@ -34,7 +34,8 @@
         <activity android:name=".TingkatPendidikanActivity" />
         <activity android:name=".MapelPengajarActivity" />
         <activity android:name=".TambahJadwalActivity" />
-        <activity android:name=".KetersediaanJadwalActivity"></activity>
+        <activity android:name=".KetersediaanJadwalActivity" />
+        <activity android:name=".DetailHistoryActivity"></activity>
     </application>
 
 </manifest>
