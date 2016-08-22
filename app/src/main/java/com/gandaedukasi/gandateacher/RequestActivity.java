@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v4.content.IntentCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -110,7 +111,21 @@ public class RequestActivity extends AppCompatActivity {
                                     mRecyclerView.setAdapter(mAdapter);
                                     mRecyclerView.setLayoutManager(mLayoutManager);
                                 }else{
-                                    Toast.makeText(getApplicationContext(), result.get("error").getAsString(), Toast.LENGTH_LONG).show();
+                                    new AlertDialog.Builder(RequestActivity.this)
+                                            .setIcon(android.R.drawable.ic_dialog_alert)
+                                            .setTitle("Kosong!")
+                                            .setMessage(result.get("error").getAsString())
+                                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    Intent i = new Intent(RequestActivity.this, MainActivity.class);
+                                                    ComponentName cn = i.getComponent();
+                                                    Intent mainIntent = IntentCompat.makeRestartActivityTask(cn);
+                                                    startActivity(mainIntent);
+                                                }
+                                            })
+                                            .show();
+                                    //Toast.makeText(getApplicationContext(), result.get("error").getAsString(), Toast.LENGTH_LONG).show();
                                 }
                             }catch (Exception ex){
                                 Toast.makeText(getApplicationContext(), getString(R.string.id_error_network), Toast.LENGTH_LONG).show();

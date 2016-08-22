@@ -122,6 +122,7 @@ public class JadwalActivity extends AppCompatActivity {
                                     new AlertDialog.Builder(JadwalActivity.this)
                                             .setIcon(android.R.drawable.ic_dialog_alert)
                                             .setTitle("Kosong!")
+                                            .setMessage("Jadwal sedang kosong")
                                             .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {
@@ -131,7 +132,6 @@ public class JadwalActivity extends AppCompatActivity {
                                                     startActivity(mainIntent);
                                                 }
                                             })
-                                            .setNegativeButton("Cancel",null)
                                             .show();
                                     //Toast.makeText(getApplicationContext(), "Jadwal sedang kosong", Toast.LENGTH_LONG).show();
                                 }

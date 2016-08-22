@@ -45,7 +45,6 @@ public class DetailJadwalActivity extends AppCompatActivity {
         studentTime = (TextView) findViewById(R.id.studentTime);
         studentPlace = (TextView) findViewById(R.id.studentPlace);
         studentPhoto = (ImageView) findViewById(R.id.studentPhoto);
-        btnSubmit = (Button) findViewById(R.id.btnSubmit);
 
         studentName.setText(nama_siswa);
         studentSchool.setText(no_telp);
