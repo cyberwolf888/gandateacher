@@ -33,5 +33,9 @@
     <string name="en_error_register">Register failed! Email or No.Telp already used</string>
     <string name="en_success_register">Register success! Please check your inbox to verify your account!</string>
     <string name="en_pilih_tingkat_pendidikan_empty">Silahkan pilih tingkat pendidikan yang ingin anda ajar!</string>
+
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
     <!-- End -->
 </resources>

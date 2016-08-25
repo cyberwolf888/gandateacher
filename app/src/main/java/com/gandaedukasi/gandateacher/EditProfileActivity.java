@@ -118,29 +118,71 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == SELECT_PHOTO && resultCode == RESULT_OK && data != null) {
-            Uri pickedImage = data.getData();
-            String[] filePath = { MediaStore.Images.Media.DATA };
-            Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
-            cursor.moveToFirst();
-            imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
+            try{
+                Uri pickedImage = data.getData();
+                String[] filePath = { MediaStore.Images.Media.DATA };
+                Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
+                cursor.moveToFirst();
+                imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
 
-            //Cek file size
-            File file = new File(imagePath);
-            int file_size = Integer.parseInt(String.valueOf(file.length()/1024));
-            Log.d("File Size",">"+file_size);
-            if(file_size>(1.5*1024)){
-                //TODO jika gambar terlalu besar
-                imagePath = "";
-                Toast.makeText(getApplicationContext(), "Ukuran gambar terlalu besar. Ukuran file maksimal 1.5 MB", Toast.LENGTH_LONG).show();
-            }else{
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);
-                teacherPhoto.setImageBitmap(bitmap);
+                //Cek file size
+                File file = new File(imagePath);
+                int file_size = Integer.parseInt(String.valueOf(file.length()/1024));
+                Log.d("File Size",">"+file_size);
+                if(file_size>(3*1024)){
+                    //TODO jika gambar terlalu besar
+                    imagePath = "";
+                    Toast.makeText(getApplicationContext(), "Ukuran gambar terlalu besar. Ukuran file maksimal 3 MB", Toast.LENGTH_LONG).show();
+                }else{
+                    /*BitmapFactory.Options options = new BitmapFactory.Options();
+                    options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+                    Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);*/
+                    teacherPhoto.setImageBitmap(decodeSampledBitmapFromResource(imagePath, 100, 100));
+                }
+
+                cursor.close();
+            }catch (Exception ex){
+                Toast.makeText(getApplicationContext(), "Ukuran gambar terlalu besar. Ukuran file maksimal 3 MB", Toast.LENGTH_LONG).show();
             }
-
-            cursor.close();
         }
+    }
+
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) >= reqHeight
+                    && (halfWidth / inSampleSize) >= reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
+    }
+
+    public static Bitmap decodeSampledBitmapFromResource(String res, int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(res, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeFile(res, options);
     }
 
     private void updateProfile(){

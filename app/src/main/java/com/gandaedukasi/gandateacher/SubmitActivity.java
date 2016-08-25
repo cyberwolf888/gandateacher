@@ -136,12 +136,14 @@ public class SubmitActivity extends AppCompatActivity {
                             }catch (Exception ex){
                                 Log.e("Erooooor",">"+ex.toString());
                                 Toast.makeText(getApplicationContext(), getString(R.string.id_error_network), Toast.LENGTH_LONG).show();
+                                finish();
                             }
                             pDialog.dismiss();
                         }
                     });
         }else {
             Toast.makeText(getApplicationContext(), getString(R.string.id_error_network), Toast.LENGTH_LONG).show();
+            finish();
         }
     }
 

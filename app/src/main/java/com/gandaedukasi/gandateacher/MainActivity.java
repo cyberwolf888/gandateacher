@@ -21,6 +21,7 @@ import com.gandaedukasi.gandateacher.utility.Session;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
+import com.onesignal.OneSignal;
 
 public class MainActivity extends AppCompatActivity {
     Session session;
@@ -29,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //OneSignal.setLogLevel(OneSignal.LOG_LEVEL.DEBUG, OneSignal.LOG_LEVEL.DEBUG);
+        OneSignal.startInit(this).init();
+        OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
+            @Override
+            public void idsAvailable(String userId, String registrationId) {
+                Log.d("Onesignal debug", "User:" + userId);
+                if (registrationId != null)
+                    Log.d("Onesignal debug", "registrationId:" + registrationId);
+            }
+        });
         session = new Session(MainActivity.this);
         if(!session.isLoggedIn()){
             Intent i = new Intent(MainActivity.this, LoginActivity.class);
@@ -165,6 +176,17 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
+            String url = new RequestServer().getServer_url()+"deleteNotif";
+            Ion.with(MainActivity.this)
+                    .load(url)
+                    .setMultipartParameter("user_id", session.getUserId())
+                    .asJsonObject()
+                    .setCallback(new FutureCallback<JsonObject>() {
+                        @Override
+                        public void onCompleted(Exception e, JsonObject result) {
+
+                        }
+                    });
             session.logoutUser();
         }
         return super.onOptionsItemSelected(item);

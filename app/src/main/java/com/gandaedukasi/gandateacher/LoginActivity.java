@@ -19,6 +19,7 @@ import com.gandaedukasi.gandateacher.utility.Session;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
+import com.onesignal.OneSignal;
 
 public class LoginActivity extends AppCompatActivity {
     Button btnLoggin, btnReg;
@@ -124,6 +125,27 @@ public class LoginActivity extends AppCompatActivity {
                                             photo = data.get("photo").getAsString();
                                         }
                                         session.createLoginSession(data.get("user_id").getAsString(),data.get("fullname").getAsString(),photo);
+                                        OneSignal.idsAvailable(new OneSignal.IdsAvailableHandler() {
+                                            @Override
+                                            public void idsAvailable(String userId, String registrationId) {
+                                                if (registrationId != null){
+                                                    Log.d("Onesignal debug", "registrationId:" + registrationId);
+
+                                                    String url = new RequestServer().getServer_url()+"createNotif";
+                                                    Ion.with(LoginActivity.this)
+                                                            .load(url)
+                                                            .setMultipartParameter("user_id", session.getUserId())
+                                                            .setMultipartParameter("onesignal_id", userId)
+                                                            .asJsonObject()
+                                                            .setCallback(new FutureCallback<JsonObject>() {
+                                                                @Override
+                                                                public void onCompleted(Exception e, JsonObject result) {
+
+                                                                }
+                                                            });
+                                                }
+                                            }
+                                        });
                                         Intent i = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(i);
                                         finish();
