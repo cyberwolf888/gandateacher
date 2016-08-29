@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -28,13 +31,16 @@ import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Spinner teacherZone;
-    Button buttonReg;
+    Button buttonReg, btnTambahPrestasi, btnDelPrestasi;
     EditText teacherName,editEmail,editPassword,teacherPhone,teacherEdu,teacherAddress;
 
     ProgressDialog pDialog;
     List<String> listZone = new ArrayList<String>();
     ArrayAdapter<String> dataAdapter;
     JsonArray mData = new JsonArray();
+
+    int jumlah_prestasi = 0;
+    private LinearLayout layoutPrestasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +61,66 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         teacherEdu = (EditText) findViewById(R.id.teacherEdu);
         teacherAddress = (EditText) findViewById(R.id.teacherAddress);
 
+        layoutPrestasi = (LinearLayout) findViewById(R.id.layoutPrestasi);
+
         buttonReg = (Button) findViewById(R.id.buttonReg);
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 attemptRegister();
+            }
+        });
+
+        btnTambahPrestasi = (Button) findViewById(R.id.btnTambahPrestasi);
+        btnDelPrestasi = (Button) findViewById(R.id.btnDelPrestasi);
+
+        btnTambahPrestasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(jumlah_prestasi<10){
+                    jumlah_prestasi++;
+                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+                    params.setMargins(0, 0, 0, 3);
+                    TextInputLayout til = new TextInputLayout(RegisterActivity.this);
+                    til.setId(10+jumlah_prestasi);
+                    til.setLayoutParams(params);
+                    til.setHint("Prestasi "+String.valueOf(jumlah_prestasi));
+                    layoutPrestasi.addView(til);
+
+                    EditText etPrestasi = new EditText(RegisterActivity.this);
+                    etPrestasi.setLayoutParams(params);
+                    etPrestasi.setId(40+jumlah_prestasi);
+                    etPrestasi.setInputType(InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+                    etPrestasi.setFocusable(true);
+                    til.addView(etPrestasi);
+
+                    if(jumlah_prestasi>0){
+                        btnDelPrestasi.setVisibility(View.VISIBLE);
+                    }else{
+                        btnDelPrestasi.setVisibility(View.GONE);
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Jumlah prestasi maksimal 10", Toast.LENGTH_LONG).show();
+                }
+
+
+            }
+        });
+
+        btnDelPrestasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layoutPrestasi.removeViewAt(jumlah_prestasi-1);
+                Log.d("test",">"+jumlah_prestasi);
+
+                jumlah_prestasi--;
+
+                if(jumlah_prestasi>0){
+                    btnDelPrestasi.setVisibility(View.VISIBLE);
+                }else{
+                    btnDelPrestasi.setVisibility(View.GONE);
+                }
+
             }
         });
     }
@@ -135,6 +196,23 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         boolean cancel = false;
         View focusView = null;
 
+        JsonObject jsonReq = new JsonObject();
+        Log.d("jumlah_prestasi ",">"+jumlah_prestasi);
+        if(jumlah_prestasi>0){
+            for (int i=1; i<=jumlah_prestasi; i++){
+                EditText et = (EditText) findViewById(40+i);
+                Log.d("Prestasi "+i,">"+et.getText().toString());
+                et.setError(null);
+                if (TextUtils.isEmpty(et.getText().toString())) {
+                    et.setError("Prestasi tidak boleh kosong!");
+                    focusView = et;
+                    cancel = true;
+                }
+                jsonReq.addProperty("prestasi"+i, et.getText().toString());
+                Log.d("Request",">"+jsonReq);
+            }
+        }
+
         //validasi alamat
         if (TextUtils.isEmpty(alamat)) {
             teacherAddress.setError(getString(R.string.id_error_alamat_empty));
@@ -201,7 +279,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             String url = new RequestServer().getServer_url()+"register/pengajar";
             Log.d("Register Url",">"+url);
 
-            JsonObject jsonReq = new JsonObject();
+            jsonReq.addProperty("jumlah_prestasi", jumlah_prestasi);
             jsonReq.addProperty("nama", nama_lengkap);
             jsonReq.addProperty("email", email);
             jsonReq.addProperty("password", password);
@@ -210,6 +288,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             jsonReq.addProperty("alamat", alamat);
             //jsonReq.addProperty("zona", zona);
             Log.d("Request",">"+jsonReq);
+
             if(isNetworkAvailable()){
                 Ion.with(RegisterActivity.this)
                         .load(url)

@@ -16,6 +16,7 @@
             android:layout_height="150dp"
             android:id="@+id/cardView"
             android:background="@color/cardview_light_background"
+            app:cardCornerRadius="5dp"
             >
             <com.makeramen.roundedimageview.RoundedImageView
                 app:riv_oval="true"
@@ -69,11 +70,12 @@
             android:layout_below="@+id/separator12"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="0dp"
-            android:id="@+id/layoutUsername">
+            android:id="@+id/layoutEmail">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
+                android:textSize="16dp"
                 android:id="@+id/editEmail"
                 android:inputType="textEmailAddress"
                 android:textColorHint="@color/colorNormalWhite"
@@ -82,19 +84,11 @@
         </android.support.design.widget.TextInputLayout>
 
         //Phone
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutUsername"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator1"
-            />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator1"
+            android:layout_below="@+id/layoutEmail"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/layoutPhone">
@@ -102,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="No. Telp"
+                android:textSize="16dp"
                 android:id="@+id/teacherPhone"
                 android:inputType="numberDecimal"
                 android:textColorHint="@color/colorNormalWhite"
@@ -110,19 +105,11 @@
         </android.support.design.widget.TextInputLayout>
 
         //Education
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutPhone"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator2"
-            />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator2"
+            android:layout_below="@+id/layoutPhone"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/layoutEdu">
@@ -132,25 +119,18 @@
                 android:hint="Pendidikan Terakhir"
                 android:id="@+id/teacherEdu"
                 android:inputType="text"
+                android:textSize="16dp"
                 android:textColorHint="@color/colorNormalWhite"
                 android:textColor="@color/colorNormalWhite"
                 android:textColorHighlight="@color/colorNormalWhite" />
         </android.support.design.widget.TextInputLayout>
 
         //Address
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutEdu"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator3"
-            />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator3"
+            android:layout_below="@+id/layoutEdu"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/layoutAddress">
@@ -158,6 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Alamat"
+                android:textSize="16dp"
                 android:id="@+id/teacherAddress"
                 android:inputType="text"
                 android:textColorHint="@color/colorNormalWhite"
@@ -166,21 +147,14 @@
         </android.support.design.widget.TextInputLayout>
 
         //Tingkat Pendidikan
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutAddress"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator14"
-            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/TingkatPendidikan"
             android:text="Tingkat Pendidikan"
-            android:layout_below="@+id/separator14"
-            android:layout_marginTop="10dp"
+            android:layout_below="@+id/layoutAddress"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
             />
         <TextView
             android:layout_width="match_parent"
@@ -195,21 +169,14 @@
             />
 
         //Mapel Pengajar
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/teacherTingkatPendidikan"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator15"
-            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/MapelPengajar"
             android:text="Mata Pelajaran"
-            android:layout_below="@+id/separator15"
+            android:layout_below="@+id/teacherTingkatPendidikan"
             android:layout_marginTop="10dp"
+            android:textSize="16dp"
             />
         <TextView
             android:layout_width="match_parent"
@@ -224,20 +191,13 @@
             />
 
         //Zone
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/teacherMapel"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator6"
-            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Zone"
             android:text="Zona Cabang"
-            android:layout_below="@+id/separator6"
+            android:textSize="16dp"
+            android:layout_below="@+id/teacherMapel"
             android:layout_marginTop="10dp"
             />
         <TextView
@@ -265,7 +225,7 @@
             />
             -->
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnSave"
             android:text="Save"
@@ -275,6 +235,7 @@
             android:textColor="@color/colorPrimary"
             android:background="@drawable/buttonround"
             android:layout_marginTop="30dp"
+            android:maxWidth="370dp"
             android:gravity="center" />
     </RelativeLayout>
     

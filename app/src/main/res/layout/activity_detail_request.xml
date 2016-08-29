@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/latar"
     android:padding="10dp"
     tools:context="com.gandaedukasi.gandateacher.DetailRequestActivity">
@@ -15,6 +16,7 @@
             android:layout_height="160dp"
             android:id="@+id/cardView"
             android:background="@color/cardview_light_background"
+            app:cardCornerRadius="5dp"
             >
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -82,6 +84,7 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:id="@+id/rvDetailRequestJadwal"
+                android:layout_marginTop="5dp"
                 >
 
             </android.support.v7.widget.RecyclerView>
@@ -90,21 +93,27 @@
 
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnAccept"
             android:text="Accept"
+            android:textColor="@color/colorPrimary"
             android:layout_below="@+id/listRequest"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
+            android:maxWidth="370dp"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/buttonround"
             />
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnDecline"
             android:text="Decline"
+            android:textColor="@color/colorPrimary"
             android:layout_below="@+id/btnAccept"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:maxWidth="370dp"
             android:background="@drawable/buttonround"
             />
     </RelativeLayout>
