@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Mapel"
             android:text="Mata Pelajaran"
+            android:textSize="16dp"
             android:layout_marginTop="10dp"
             />
         <Spinner
@@ -24,6 +25,7 @@
             android:layout_below="@+id/Mapel"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:textColor="@color/colorNormalWhite"
             android:textColorHint="@color/colorNormalWhite"
             android:textColorHighlight="@color/colorNormalWhite"
@@ -42,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/Hari"
+            android:textSize="16dp"
             android:layout_below="@+id/separator1"
             android:text="Hari"
             android:layout_marginTop="10dp"
@@ -50,6 +53,7 @@
             android:id="@+id/inputHari"
             android:layout_below="@+id/Hari"
             android:layout_width="fill_parent"
+            android:layout_marginTop="3dp"
             android:layout_height="wrap_content"
             android:textColor="@color/colorNormalWhite"
             android:textColorHint="@color/colorNormalWhite"
@@ -79,25 +83,19 @@
                 android:hint="Waktu Mulai"
                 android:id="@+id/inputWaktuMulai"
                 android:inputType="time"
+                android:textSize="16dp"
                 android:textColorHint="@color/colorNormalWhite"
                 android:textColor="@color/colorNormalWhite"
                 android:textColorHighlight="@color/colorNormalWhite" />
         </android.support.design.widget.TextInputLayout>
 
-        //Wwaktu Selesai
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutWaktuMulai"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator3"
+        //Wwaktu Selesai="@+id/separator3"
             />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator3"
+            android:layout_below="@+id/layoutWaktuMulai"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/layoutWaktuSelesai">
@@ -105,6 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Waktu Selesai"
+                android:textSize="16dp"
                 android:id="@+id/inputWaktuSelesai"
                 android:inputType="time"
                 android:textColorHint="@color/colorNormalWhite"
@@ -113,7 +112,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:id="@+id/buttonAdd"
             android:text="Tambah"
@@ -123,6 +122,7 @@
             android:textColor="@color/colorPrimary"
             android:background="@drawable/buttonround"
             android:layout_marginTop="30dp"
+            android:maxWidth="370dp"
             android:gravity="center" />
     </RelativeLayout>
 

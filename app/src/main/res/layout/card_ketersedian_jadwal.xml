@@ -1,165 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/cvKetersedianJadwal"
-    app:cardBackgroundColor="@color/colorTextButton"
-    android:layout_marginTop="5dp">
-
-    <RelativeLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        >
-        //Label Mata Pelajaran
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvMapel"
-            android:textSize="20dp"
-            android:textColor="@color/colorNormalWhite"
-            />
+        android:id="@+id/cvKetersedianJadwal"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="5dp">
 
-        //Hari
-        <TextView
-            android:layout_below="@id/tvMapel"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:id="@+id/Hari"
-            android:text="Hari: "
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
-        <TextView
-            android:layout_below="@id/tvMapel"
-            android:layout_toRightOf="@id/Hari"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvHari"
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
+            android:padding="10dp"
+            >
+            //Label Mata Pelajaran
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvMapel"
+                android:text="Mata Pelajaran"
+                android:textSize="20dp"
+                android:textColor="@color/colorPrimary"
+                />
 
-        //Waktu Mulai
-        <TextView
-            android:layout_below="@id/Hari"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/WaktuMulai"
-            android:text="Waktu Mulai: "
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
-        <TextView
-            android:layout_below="@id/Hari"
-            android:layout_toRightOf="@id/WaktuMulai"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvWaktuMulai"
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
-        <TextView
-            android:layout_below="@id/Hari"
-            android:layout_toRightOf="@id/tvWaktuMulai"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" WITA"
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
+            //Hari
+            <TextView
+                android:layout_below="@id/tvMapel"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Hari"
+                android:text="Hari "
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_below="@id/tvMapel"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHari"
+                android:text="Hari"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="100dp"
+                android:layout_gravity="left|center"
+                />
 
-        //Waktu Selesai
-        <TextView
-            android:layout_below="@id/WaktuMulai"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/WaktuSelesai"
-            android:text="Waktu Selesai: "
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
-        <TextView
-            android:layout_below="@id/WaktuMulai"
-            android:layout_toRightOf="@id/WaktuSelesai"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvWaktuSelesai"
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
-        <TextView
-            android:layout_below="@id/WaktuMulai"
-            android:layout_toRightOf="@id/tvWaktuSelesai"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" WITA"
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            android:id="@+id/textView" />
+            //Waktu Mulai
+            <TextView
+                android:layout_below="@id/Hari"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/WaktuMulai"
+                android:text="Mulai "
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_below="@id/Hari"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvWaktuMulai"
+                android:text="sdsd"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="100dp"
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_below="@id/Hari"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorPrimary"
+                android:layout_toRightOf="@id/tvWaktuMulai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" WITA"
+                android:layout_gravity="left|center"
+                />
 
-        //Tempat
-        <TextView
-            android:layout_below="@id/WaktuSelesai"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Tempat"
-            android:text="Tempat: "
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
-        <TextView
-            android:layout_below="@id/WaktuSelesai"
-            android:layout_toRightOf="@id/Tempat"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvTempat"
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
-        <TextView
-            android:layout_below="@id/Tempat"
-            android:layout_marginTop="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvStatus"
-            android:text="Active"
-            android:textSize="12dp"
-            android:layout_gravity="left|center"
-            android:textColor="@color/colorNormalWhite"
-            />
+            //Waktu Selesai
+            <TextView
+                android:layout_below="@id/WaktuMulai"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/WaktuSelesai"
+                android:text="Selesai "
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_below="@id/WaktuMulai"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvWaktuSelesai"
+                android:textColor="@color/colorPrimary"
+                android:text="sdsd"
+                android:layout_marginLeft="100dp"
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_below="@id/WaktuMulai"
+                android:layout_toRightOf="@id/tvWaktuSelesai"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" WITA"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="left|center"
+                android:id="@+id/textView" />
 
-        //Button Delete
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:id="@+id/btnDelete"
-            android:src="@android:drawable/ic_dialog_info"
-            android:padding="0dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>
-</android.support.v7.widget.CardView>
+            //Tempat
+            <TextView
+                android:layout_below="@id/WaktuSelesai"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Tempat"
+                android:text="Tempat "
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_below="@id/WaktuSelesai"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTempat"
+                android:text="sdsd"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="100dp"
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_below="@id/Tempat"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Status"
+                android:text="Status "
+                android:layout_gravity="left|center"
+                />
+            <TextView
+                android:layout_below="@id/Tempat"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvStatus"
+                android:text="Active"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="100dp"
+                android:layout_gravity="left|center"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="310dp"
+            >
+            //Button Delete
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/btnDelete"
+                android:layout_marginTop="95dp"
+                android:src="@android:drawable/ic_dialog_info"
+                android:padding="0dp"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>

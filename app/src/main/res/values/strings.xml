@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Ganda Teacher</string>
+    <string name="app_name">Edukezy Teacher</string>
     <color name="themecolor">#fd482f</color>
     <!-- Validation String -->
     <string name="id_error_password_empty">Password tidak boleh kosong</string>
     <string name="id_error_passowrd_length">Password terlalu pendek</string>
     <string name="id_error_email_empty">Email tidak boleh kosong</string>
     <string name="id_error_email_invalid">Alamat email anda salah</string>
-    <string name="id_error_network">Tidak dapat tersambung dengan server!</string>
+    <string name="id_error_network">Tidak dapat tersambung dengan server</string>
     <string name="id_error_login">Login gagal. Email atau password tidak cocok.</string>
     <string name="id_error_nama_empty">Nama lengkap tidak boleh kosong</string>
     <string name="id_error_nama_invalid">Nama lengkap tidak valid</string>
@@ -14,10 +14,10 @@
     <string name="id_error_edu_empty">Pendidikan terakhir tidak boleh kosong</string>
     <string name="id_error_alamat_empty">Alamat tidak boleh kosong</string>
     <string name="id_error_register">Register gagal! Email atau No.Telp sudah digunakan</string>
-    <string name="id_success_register">Register berhasil! Mohon cek inbox email anda untuk verifikasi account!</string>
-    <string name="id_pilih_tingkat_pendidikan_empty">Silahkan pilih tingkat pendidikan yang ingin anda ajar!</string>
-    <string name="id_error_waktu_mulai">Waktu mulai tidak boleh kosong!</string>
-    <string name="id_error_waktu_selesai">Waktu mulai tidak boleh kosong!</string>
+    <string name="id_success_register">Register berhasil! Mohon cek inbox email anda untuk verifikasi account</string>
+    <string name="id_pilih_tingkat_pendidikan_empty">Silahkan pilih tingkat pendidikan yang ingin anda ajar</string>
+    <string name="id_error_waktu_mulai">Waktu mulai tidak boleh kosong</string>
+    <string name="id_error_waktu_selesai">Waktu mulai tidak boleh kosong</string>
 
     <string name="en_error_password_empty">Ppassword cannot be empty</string>
     <string name="en_error_passowrd_length">Password is too short</string>

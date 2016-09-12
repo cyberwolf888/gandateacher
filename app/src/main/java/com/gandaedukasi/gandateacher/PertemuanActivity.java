@@ -124,8 +124,8 @@ public class PertemuanActivity extends AppCompatActivity {
                                 }else{
                                     new AlertDialog.Builder(PertemuanActivity.this)
                                             .setIcon(android.R.drawable.ic_dialog_alert)
-                                            .setTitle("Kosong!")
-                                            .setMessage("Pertemuan sedang kosong")
+                                            .setTitle("Kosong")
+                                            .setMessage("Maaf, pertemuan sedang tidak tersedia")
                                             .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {

@@ -119,8 +119,8 @@ public class SubmitActivity extends AppCompatActivity {
                                 }else{
                                     new AlertDialog.Builder(SubmitActivity.this)
                                             .setIcon(android.R.drawable.ic_dialog_alert)
-                                            .setTitle("Kosong!")
-                                            .setMessage("Jadwal sedang kosong")
+                                            .setTitle("Kosong")
+                                            .setMessage("Maaf, jadwal sedang tidak tersedia")
                                             .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {

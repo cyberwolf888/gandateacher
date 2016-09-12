@@ -26,32 +26,26 @@
                 android:hint="Nama Lengkap"
                 android:id="@+id/teacherName"
                 android:inputType="text"
+                android:textSize="16dp"
                 android:textColorHint="@color/colorNormalWhite"
                 android:textColor="@color/colorNormalWhite"
                 android:textColorHighlight="@color/colorNormalWhite" />
         </android.support.design.widget.TextInputLayout>
 
         //Email
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutNamaLengkap"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator12"
-            />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator12"
+            android:layout_below="@+id/layoutNamaLengkap"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="0dp"
-            android:id="@+id/layoutUsername">
+            android:id="@+id/layoutEmail">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
+                android:textSize="16dp"
                 android:id="@+id/editEmail"
                 android:inputType="textEmailAddress"
                 android:textColorHint="@color/colorNormalWhite"
@@ -60,19 +54,11 @@
         </android.support.design.widget.TextInputLayout>
 
         //Password
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutUsername"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator13"
-            />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator13"
+            android:layout_below="@+id/layoutEmail"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/layoutPassword">
@@ -80,6 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
+                android:textSize="16dp"
                 android:id="@+id/editPassword"
                 android:inputType="textPassword"
                 android:textColorHint="@color/colorNormalWhite"
@@ -88,19 +75,11 @@
         </android.support.design.widget.TextInputLayout>
 
         //Phone
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutPassword"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator1"
-            />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator1"
+            android:layout_below="@+id/layoutPassword"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/layoutPhone">
@@ -108,6 +87,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="No. Telp"
+                android:textSize="16dp"
                 android:id="@+id/teacherPhone"
                 android:inputType="numberDecimal"
                 android:textColorHint="@color/colorNormalWhite"
@@ -116,19 +96,11 @@
         </android.support.design.widget.TextInputLayout>
 
         //Education
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutPhone"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator2"
-            />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator2"
+            android:layout_below="@+id/layoutPhone"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/layoutEdu">
@@ -138,25 +110,18 @@
                 android:hint="Pendidikan Terakhir"
                 android:id="@+id/teacherEdu"
                 android:inputType="text"
+                android:textSize="16dp"
                 android:textColorHint="@color/colorNormalWhite"
                 android:textColor="@color/colorNormalWhite"
                 android:textColorHighlight="@color/colorNormalWhite" />
         </android.support.design.widget.TextInputLayout>
 
         //Address
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorNormalWhite"
-            android:layout_below="@+id/layoutEdu"
-            android:layout_marginTop="10dp"
-            android:id="@+id/separator3"
-            />
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/separator3"
+            android:layout_below="@+id/layoutEdu"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="0dp"
             android:id="@+id/layoutAddress">
@@ -164,6 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Alamat"
+                android:textSize="16dp"
                 android:id="@+id/teacherAddress"
                 android:inputType="text"
                 android:textColorHint="@color/colorNormalWhite"
@@ -211,16 +177,53 @@
             />
             -->
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonReg"
-            android:text="Register"
+            android:id="@+id/btnTambahPrestasi"
+            android:text="Tambah Prestasi"
             android:layout_below="@+id/layoutAddress"
             android:layout_centerHorizontal="true"
             android:textSize="18dp"
             android:textColor="@color/colorPrimary"
             android:background="@drawable/buttonround"
             android:layout_marginTop="30dp"
+            android:maxWidth="370dp"
+            android:gravity="center" />
+        <LinearLayout
+            android:id="@+id/layoutPrestasi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/btnTambahPrestasi">
+
+
+        </LinearLayout>
+        <Button
+            android:visibility="gone"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelPrestasi"
+            android:text="Hapus Prestasi"
+            android:layout_below="@+id/layoutPrestasi"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:layout_marginTop="30dp"
+            android:maxWidth="370dp"
+            android:gravity="center" />
+        <Button
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonReg"
+            android:text="Register"
+            android:layout_below="@+id/btnDelPrestasi"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:layout_marginTop="30dp"
+            android:maxWidth="370dp"
             android:gravity="center" />
     </RelativeLayout>
 
