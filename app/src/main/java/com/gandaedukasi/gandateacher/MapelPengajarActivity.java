@@ -306,7 +306,7 @@ public class MapelPengajarActivity extends AppCompatActivity {
                                         String status = result.get("status").toString();
                                         if (status.equals("1")){
                                             //TODO buat string value untuk welcome
-                                            Toast.makeText(getApplicationContext(), "Selamat datanng di ganda teacher!", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(), "Selamat datang di Edukezy teacher!", Toast.LENGTH_LONG).show();
                                             Intent i = new Intent(MapelPengajarActivity.this, MainActivity.class);
                                             ComponentName cn = i.getComponent();
                                             Intent mainIntent = IntentCompat.makeRestartActivityTask(cn);

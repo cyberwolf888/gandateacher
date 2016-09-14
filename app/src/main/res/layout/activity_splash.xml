@@ -25,7 +25,7 @@
         <ImageView
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/logo_big"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:id="@+id/fullscreen_content"
