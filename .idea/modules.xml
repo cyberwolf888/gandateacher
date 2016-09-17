@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GandaTeacher.iml" filepath="$PROJECT_DIR$/GandaTeacher.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gandateacher.iml" filepath="$PROJECT_DIR$/gandateacher.iml" />
     </modules>
   </component>
 </project>

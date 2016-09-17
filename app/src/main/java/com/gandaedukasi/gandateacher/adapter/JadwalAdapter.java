@@ -52,6 +52,7 @@ public class JadwalAdapter extends RecyclerView.Adapter<JadwalAdapter.JadwalView
                     final Jadwal feedItem = listItems.get(getAdapterPosition());
                     final int position = getAdapterPosition();
                     Intent i = new Intent(mContext, DetailJadwalActivity.class);
+                    i.putExtra("id",feedItem.id);
                     i.putExtra("jadwal_id",feedItem.jadwal_id);
                     i.putExtra("detail_jadwal_id",feedItem.detail_jadwal_id);
                     i.putExtra("nama_siswa",feedItem.nama_siswa);

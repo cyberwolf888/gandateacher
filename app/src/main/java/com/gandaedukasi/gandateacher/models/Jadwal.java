@@ -5,9 +5,10 @@ package com.gandaedukasi.gandateacher.models;
  */
 
 public class Jadwal {
-    public String jadwal_id, detail_jadwal_id, nama_siswa, no_telp, photo, label_mapel, label_tanggal, label_waktu, label_tempat, pertemuan;
+    public String id,jadwal_id, detail_jadwal_id, nama_siswa, no_telp, photo, label_mapel, label_tanggal, label_waktu, label_tempat, pertemuan;
 
-    public Jadwal(String jadwal_id, String detail_jadwal_id, String nama_siswa, String no_telp, String photo, String label_mapel, String label_tanggal, String label_waktu, String label_tempat, String pertemuan){
+    public Jadwal(String id, String jadwal_id, String detail_jadwal_id, String nama_siswa, String no_telp, String photo, String label_mapel, String label_tanggal, String label_waktu, String label_tempat, String pertemuan){
+        this.id = id;
         this.jadwal_id = jadwal_id;
         this.detail_jadwal_id = detail_jadwal_id;
         this.nama_siswa = nama_siswa;
