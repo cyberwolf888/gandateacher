@@ -137,6 +137,26 @@
                 android:textColorHighlight="@color/colorNormalWhite" />
         </android.support.design.widget.TextInputLayout>
 
+        //Kode Pos
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/layoutAddress"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="0dp"
+            android:id="@+id/layoutKodePos">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kode Pos"
+                android:id="@+id/teacherKodePos"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite" />
+        </android.support.design.widget.TextInputLayout>
+
         <!--
         //Zone
         <View
@@ -181,7 +201,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnTambahPrestasi"
             android:text="Tambah Prestasi"
-            android:layout_below="@+id/layoutAddress"
+            android:layout_below="@+id/layoutKodePos"
             android:layout_centerHorizontal="true"
             android:textSize="18dp"
             android:textColor="@color/colorPrimary"

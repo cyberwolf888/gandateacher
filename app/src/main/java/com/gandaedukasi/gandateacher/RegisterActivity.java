@@ -32,7 +32,7 @@ import java.util.List;
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Spinner teacherZone;
     Button buttonReg, btnTambahPrestasi, btnDelPrestasi;
-    EditText teacherName,editEmail,editPassword,teacherPhone,teacherEdu,teacherAddress;
+    EditText teacherName,editEmail,editPassword,teacherPhone,teacherEdu,teacherAddress,teacherKodePos;
 
     ProgressDialog pDialog;
     List<String> listZone = new ArrayList<String>();
@@ -60,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         teacherPhone = (EditText) findViewById(R.id.teacherPhone);
         teacherEdu = (EditText) findViewById(R.id.teacherEdu);
         teacherAddress = (EditText) findViewById(R.id.teacherAddress);
+        teacherKodePos = (EditText) findViewById(R.id.teacherKodePos);
 
         layoutPrestasi = (LinearLayout) findViewById(R.id.layoutPrestasi);
 
@@ -184,6 +185,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         teacherPhone.setError(null);
         teacherEdu.setError(null);
         teacherAddress.setError(null);
+        teacherKodePos.setError(null);
 
         String nama_lengkap = teacherName.getText().toString();
         String email = editEmail.getText().toString();
@@ -191,6 +193,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         String telp = teacherPhone.getText().toString();
         String edukasi = teacherEdu.getText().toString();
         String alamat = teacherAddress.getText().toString();
+        String kodepos = teacherKodePos.getText().toString();
         //String zona = teacherZone.getSelectedItem().toString();
 
         boolean cancel = false;
@@ -211,6 +214,13 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 jsonReq.addProperty("prestasi"+i, et.getText().toString());
                 Log.d("Request",">"+jsonReq);
             }
+        }
+
+        //validasi kodepos
+        if (TextUtils.isEmpty(kodepos)) {
+            teacherKodePos.setError(getString(R.string.id_error_kodepos));
+            focusView = teacherKodePos;
+            cancel = true;
         }
 
         //validasi alamat
@@ -286,6 +296,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             jsonReq.addProperty("telp", telp);
             jsonReq.addProperty("edukasi", edukasi);
             jsonReq.addProperty("alamat", alamat);
+            jsonReq.addProperty("kodepos", kodepos);
             //jsonReq.addProperty("zona", zona);
             Log.d("Request",">"+jsonReq);
 
@@ -306,7 +317,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                                         Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
                                         startActivity(i);
                                     }else{
-                                        Toast.makeText(getApplicationContext(), getString(R.string.id_error_register), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), result.get("error").getAsString(), Toast.LENGTH_LONG).show();
                                     }
                                 } catch (Exception ex){
                                     Toast.makeText(getApplicationContext(), getString(R.string.id_error_network), Toast.LENGTH_LONG).show();

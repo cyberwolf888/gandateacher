@@ -18,6 +18,7 @@
     <string name="id_pilih_tingkat_pendidikan_empty">Silahkan pilih tingkat pendidikan yang ingin anda ajar</string>
     <string name="id_error_waktu_mulai">Waktu mulai tidak boleh kosong</string>
     <string name="id_error_waktu_selesai">Waktu mulai tidak boleh kosong</string>
+    <string name="id_error_kodepos">Kode Pos tidak boleh kosong</string>
 
     <string name="en_error_password_empty">Ppassword cannot be empty</string>
     <string name="en_error_passowrd_length">Password is too short</string>
@@ -33,6 +34,7 @@
     <string name="en_error_register">Register failed! Email or No.Telp already used</string>
     <string name="en_success_register">Register success! Please check your inbox to verify your account!</string>
     <string name="en_pilih_tingkat_pendidikan_empty">Silahkan pilih tingkat pendidikan yang ingin anda ajar!</string>
+    <string name="en_error_kodepos">Postal Code cannot be empty</string>
 
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>

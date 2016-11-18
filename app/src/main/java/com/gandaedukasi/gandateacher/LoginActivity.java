@@ -151,7 +151,7 @@ public class LoginActivity extends AppCompatActivity {
                                         finish();
                                         //Toast.makeText(getApplicationContext(), data.get("fullname").toString(), Toast.LENGTH_LONG).show();
                                     }else{
-                                        Toast.makeText(getApplicationContext(), getString(R.string.id_error_login), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getApplicationContext(), result.get("error").getAsString(), Toast.LENGTH_LONG).show();
                                     }
                                 }catch (Exception ex){
                                     Log.d("Gagal Login",">"+ex.toString());

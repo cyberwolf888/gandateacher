@@ -42,7 +42,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RescheduleActivity" />
-        <activity android:name=".CancelActivity"></activity>
+        <activity android:name=".CancelActivity" />
+        <activity android:name=".VerifyAlamatActivity"></activity>
     </application>
 
 </manifest>

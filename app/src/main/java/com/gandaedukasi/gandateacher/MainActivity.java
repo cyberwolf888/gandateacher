@@ -148,6 +148,10 @@ public class MainActivity extends AppCompatActivity {
                                         startActivity(i);
                                         finish();
                                     }
+                                }else if(status.equals("2")){
+                                    Intent i = new Intent(MainActivity.this, VerifyAlamatActivity.class);
+                                    startActivity(i);
+                                    finish();
                                 }else{
                                     //TODO jika status 0
                                 }
