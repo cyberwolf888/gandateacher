@@ -44,10 +44,12 @@ public class MapelPengajarActivity extends AppCompatActivity {
     ProgressDialog pDialog;
     Session session;
     String pendidikan_pengajar;
+    private String zona_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         pendidikan_pengajar = getIntent().getStringExtra("pendidikan_pengajar");
+        zona_id = getIntent().getStringExtra("zona_id");
         session = new Session(MapelPengajarActivity.this);
         setContentView(R.layout.activity_mapel_pengajar);
 
@@ -289,6 +291,7 @@ public class MapelPengajarActivity extends AppCompatActivity {
                 JsonObject jsonReq = new JsonObject();
                 jsonReq.addProperty("tingkat_pendidikan", pendidikan_pengajar);
                 jsonReq.addProperty("mapel", selected);
+                jsonReq.addProperty("zona_id", zona_id);
                 jsonReq.addProperty("user_id", session.getUserId());
                 Log.d("Request",">"+jsonReq);
 

@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/action_next"
-        android:icon="@android:drawable/ic_media_next"
+        android:icon="@drawable/icon_right"
         android:title="Next"
         app:showAsAction="always"/>
 

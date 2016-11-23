@@ -41,6 +41,7 @@ public class TingkatPendidikanActivity extends AppCompatActivity {
     private ScrollView mScrollViewFilter;
     private Filter_Adapter mFilter_Adapter ;
     private FlowLayout mFlowLayoutFilter ;
+    private String zona_id;
     JsonArray data = new JsonArray();
     ProgressDialog pDialog;
     Session session;
@@ -48,6 +49,7 @@ public class TingkatPendidikanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         session = new Session(TingkatPendidikanActivity.this);
+        zona_id = getIntent().getStringExtra("zona_id");
         setContentView(R.layout.activity_tingkat_pendidikan);
 
         mArrFilter = new ArrayList<>();
@@ -295,6 +297,7 @@ public class TingkatPendidikanActivity extends AppCompatActivity {
             if(countSelected>0){
                 Intent i = new Intent(TingkatPendidikanActivity.this, MapelPengajarActivity.class);
                 i.putExtra("pendidikan_pengajar",selected);
+                i.putExtra("zona_id",zona_id);
                 startActivity(i);
                 //finish();
             }else{

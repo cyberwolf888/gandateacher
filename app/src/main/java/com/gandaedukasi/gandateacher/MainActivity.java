@@ -144,7 +144,8 @@ public class MainActivity extends AppCompatActivity {
                                     String isNewAccount = result.get("isNewAccount").getAsString();
                                     Log.d("Cek isNewAccount",">"+isNewAccount);
                                     if (isNewAccount.equals("1")){
-                                        Intent i = new Intent(MainActivity.this, TingkatPendidikanActivity.class);
+                                        //Intent i = new Intent(MainActivity.this, TingkatPendidikanActivity.class);
+                                        Intent i = new Intent(MainActivity.this, PilihCabangActivity.class);
                                         startActivity(i);
                                         finish();
                                     }
