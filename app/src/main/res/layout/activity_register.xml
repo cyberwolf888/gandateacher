@@ -196,17 +196,117 @@
             android:textColor="@color/colorNormalWhite"
             />
             -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="Silakan pilih tingkat pendidikan yang ingin anda ajar (bisa pilih lebih dari 1)"
+            android:layout_below="@+id/layoutKodePos"
+            android:id="@+id/tvTingkatPendidikan"
+        />
         <Button
             android:layout_width="370dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btnTambahPrestasi"
-            android:text="Tambah Prestasi"
-            android:layout_below="@+id/layoutKodePos"
+            android:id="@+id/btnAddPendidikan"
+            android:text="Tambah Tingkat Pendidikan"
+            android:layout_below="@+id/tvTingkatPendidikan"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:layout_marginTop="10dp"
+            android:maxWidth="370dp"
+            android:gravity="center" />
+        <LinearLayout
+            android:id="@+id/layoutPendidikan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/btnAddPendidikan">
+
+        </LinearLayout>
+        <Button
+            android:visibility="gone"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelPendidikan"
+            android:text="Hapus Tingkat Pendidikan"
+            android:layout_below="@+id/layoutPendidikan"
             android:layout_centerHorizontal="true"
             android:textSize="18dp"
             android:textColor="@color/colorPrimary"
             android:background="@drawable/buttonround"
             android:layout_marginTop="30dp"
+            android:maxWidth="370dp"
+            android:gravity="center" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="Silakan pilih mata pelajaran (contoh: IPA, IPS, Matematika) yang ingin anda ajar (bisa pilih lebih dari 1)"
+            android:layout_below="@+id/btnDelPendidikan"
+            android:id="@+id/tvMapel"
+            />
+        <Button
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAddMapel"
+            android:text="Tambah Mata Pelajaran"
+            android:layout_below="@+id/tvMapel"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:layout_marginTop="10dp"
+            android:maxWidth="370dp"
+            android:gravity="center" />
+        <LinearLayout
+            android:id="@+id/layoutMapel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/btnAddMapel">
+
+        </LinearLayout>
+        <Button
+            android:visibility="gone"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelMapel"
+            android:text="Hapus Mata Pelajaran"
+            android:layout_below="@+id/layoutMapel"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:layout_marginTop="30dp"
+            android:maxWidth="370dp"
+            android:gravity="center" />
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:text="Silakan isi jika anda punya prestasi tertentu (bisa pilih lebih dari 1)"
+            android:layout_below="@+id/btnDelMapel"
+            android:id="@+id/tvPrestasi"
+            />
+        <Button
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnTambahPrestasi"
+            android:text="Tambah Prestasi"
+            android:layout_below="@+id/tvPrestasi"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:layout_marginTop="10dp"
             android:maxWidth="370dp"
             android:gravity="center" />
         <LinearLayout
@@ -215,7 +315,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_below="@+id/btnTambahPrestasi">
-
 
         </LinearLayout>
         <Button
@@ -232,6 +331,7 @@
             android:layout_marginTop="30dp"
             android:maxWidth="370dp"
             android:gravity="center" />
+
         <Button
             android:layout_width="370dp"
             android:layout_height="wrap_content"

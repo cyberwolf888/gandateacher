@@ -31,7 +31,7 @@ import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Spinner teacherZone;
-    Button buttonReg, btnTambahPrestasi, btnDelPrestasi;
+    Button buttonReg, btnTambahPrestasi, btnDelPrestasi, btnAddPendidikan, btnDelPendidikan, btnAddMapel, btnDelMapel;
     EditText teacherName,editEmail,editPassword,teacherPhone,teacherEdu,teacherAddress,teacherKodePos;
 
     ProgressDialog pDialog;
@@ -40,7 +40,11 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     JsonArray mData = new JsonArray();
 
     int jumlah_prestasi = 0;
+    int jumlah_pendidikan = 0;
+    int jumlah_mapel = 0;
     private LinearLayout layoutPrestasi;
+    private LinearLayout layoutPendidikan;
+    private LinearLayout layoutMapel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         teacherKodePos = (EditText) findViewById(R.id.teacherKodePos);
 
         layoutPrestasi = (LinearLayout) findViewById(R.id.layoutPrestasi);
+        layoutPendidikan = (LinearLayout) findViewById(R.id.layoutPendidikan);
+        layoutMapel = (LinearLayout) findViewById(R.id.layoutMapel);
 
         buttonReg = (Button) findViewById(R.id.buttonReg);
         buttonReg.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +80,102 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         btnTambahPrestasi = (Button) findViewById(R.id.btnTambahPrestasi);
         btnDelPrestasi = (Button) findViewById(R.id.btnDelPrestasi);
+        btnAddMapel = (Button) findViewById(R.id.btnAddMapel);
+        btnDelMapel = (Button) findViewById(R.id.btnDelMapel);
+        btnAddPendidikan = (Button) findViewById(R.id.btnAddPendidikan);
+        btnDelPendidikan = (Button) findViewById(R.id.btnDelPendidikan);
+
+        btnAddPendidikan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(jumlah_pendidikan<5){
+                    jumlah_pendidikan++;
+                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+                    params.setMargins(0, 0, 0, 3);
+                    Spinner spn = new Spinner(RegisterActivity.this);
+                    spn.setId(60+jumlah_pendidikan);
+                    spn.setLayoutParams(params);
+                    layoutPendidikan.addView(spn);
+
+                    Spinner spinner = spn;
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(RegisterActivity.this,
+                            R.array.tingkat_pendidikan, android.R.layout.simple_spinner_item);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    spinner.setAdapter(adapter);
+
+                    if(jumlah_pendidikan>0){
+                        btnDelPendidikan.setVisibility(View.VISIBLE);
+                    }else{
+                        btnDelPendidikan.setVisibility(View.GONE);
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Jumlah tingkat pendidikan maksimal 5", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        btnDelPendidikan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layoutPendidikan.removeViewAt(jumlah_pendidikan-1);
+                Log.d("test",">"+jumlah_pendidikan);
+
+                jumlah_pendidikan--;
+
+                if(jumlah_pendidikan>0){
+                    btnDelPendidikan.setVisibility(View.VISIBLE);
+                }else{
+                    btnDelPendidikan.setVisibility(View.GONE);
+                }
+
+            }
+        });
+
+        btnAddMapel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(jumlah_mapel<10){
+                    jumlah_mapel++;
+                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+                    params.setMargins(0, 0, 0, 3);
+                    TextInputLayout til = new TextInputLayout(RegisterActivity.this);
+                    til.setId(20+jumlah_mapel);
+                    til.setLayoutParams(params);
+                    til.setHint("Mata Pelajaran "+String.valueOf(jumlah_mapel));
+                    layoutMapel.addView(til);
+
+                    EditText etPrestasi = new EditText(RegisterActivity.this);
+                    etPrestasi.setLayoutParams(params);
+                    etPrestasi.setId(80+jumlah_mapel);
+                    etPrestasi.setInputType(InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+                    etPrestasi.setFocusable(true);
+                    til.addView(etPrestasi);
+
+                    if(jumlah_mapel>0){
+                        btnDelMapel.setVisibility(View.VISIBLE);
+                    }else{
+                        btnDelMapel.setVisibility(View.GONE);
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(), "Jumlah mata pelajaran maksimal 10", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        btnDelMapel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                layoutMapel.removeViewAt(jumlah_mapel-1);
+                Log.d("test",">"+jumlah_mapel);
+
+                jumlah_mapel--;
+
+                if(jumlah_mapel>0){
+                    btnDelMapel.setVisibility(View.VISIBLE);
+                }else{
+                    btnDelMapel.setVisibility(View.GONE);
+                }
+            }
+        });
+
 
         btnTambahPrestasi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -201,6 +303,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         JsonObject jsonReq = new JsonObject();
         Log.d("jumlah_prestasi ",">"+jumlah_prestasi);
+
         if(jumlah_prestasi>0){
             for (int i=1; i<=jumlah_prestasi; i++){
                 EditText et = (EditText) findViewById(40+i);
@@ -212,6 +315,28 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     cancel = true;
                 }
                 jsonReq.addProperty("prestasi"+i, et.getText().toString());
+                Log.d("Request",">"+jsonReq);
+            }
+        }
+
+        if(jumlah_pendidikan>0){
+            for (int i=1; i<=jumlah_pendidikan; i++){
+                Spinner spn = (Spinner) findViewById(60+i);
+                jsonReq.addProperty("pendidikan"+i, spn.getSelectedItem().toString());
+                Log.d("Request",">"+jsonReq);
+            }
+        }
+
+        if(jumlah_mapel>0){
+            for (int i=1; i<=jumlah_mapel; i++){
+                EditText et = (EditText) findViewById(80+i);
+                et.setError(null);
+                if (TextUtils.isEmpty(et.getText().toString())) {
+                    et.setError("Mata pelajaran tidak boleh kosong!");
+                    focusView = et;
+                    cancel = true;
+                }
+                jsonReq.addProperty("mapel"+i, et.getText().toString());
                 Log.d("Request",">"+jsonReq);
             }
         }
@@ -290,6 +415,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             Log.d("Register Url",">"+url);
 
             jsonReq.addProperty("jumlah_prestasi", jumlah_prestasi);
+            jsonReq.addProperty("jumlah_pendidikan", jumlah_pendidikan);
+            jsonReq.addProperty("jumlah_mapel", jumlah_mapel);
             jsonReq.addProperty("nama", nama_lengkap);
             jsonReq.addProperty("email", email);
             jsonReq.addProperty("password", password);
@@ -298,7 +425,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             jsonReq.addProperty("alamat", alamat);
             jsonReq.addProperty("kodepos", kodepos);
             //jsonReq.addProperty("zona", zona);
-            Log.d("Request",">"+jsonReq);
+
+            Log.d("Request ALL",">"+jsonReq);
 
             if(isNetworkAvailable()){
                 Ion.with(RegisterActivity.this)
