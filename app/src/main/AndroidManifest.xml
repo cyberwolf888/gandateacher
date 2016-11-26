@@ -44,7 +44,8 @@
         <activity android:name=".RescheduleActivity" />
         <activity android:name=".CancelActivity" />
         <activity android:name=".VerifyAlamatActivity" />
-        <activity android:name=".PilihCabangActivity"></activity>
+        <activity android:name=".PilihCabangActivity" />
+        <activity android:name=".CariKodePosActivity"></activity>
     </application>
 
 </manifest>

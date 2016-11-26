@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gandaedukasi.gandateacher.utility.RequestServer;
@@ -33,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     Spinner teacherZone;
     Button buttonReg, btnTambahPrestasi, btnDelPrestasi, btnAddPendidikan, btnDelPendidikan, btnAddMapel, btnDelMapel;
     EditText teacherName,editEmail,editPassword,teacherPhone,teacherEdu,teacherAddress,teacherKodePos;
+    TextView tvKodePos;
 
     ProgressDialog pDialog;
     List<String> listZone = new ArrayList<String>();
@@ -66,6 +68,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         teacherAddress = (EditText) findViewById(R.id.teacherAddress);
         teacherKodePos = (EditText) findViewById(R.id.teacherKodePos);
 
+        tvKodePos = (TextView) findViewById(R.id.tvKodePos);
+
         layoutPrestasi = (LinearLayout) findViewById(R.id.layoutPrestasi);
         layoutPendidikan = (LinearLayout) findViewById(R.id.layoutPendidikan);
         layoutMapel = (LinearLayout) findViewById(R.id.layoutMapel);
@@ -85,6 +89,13 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         btnAddPendidikan = (Button) findViewById(R.id.btnAddPendidikan);
         btnDelPendidikan = (Button) findViewById(R.id.btnDelPendidikan);
 
+        tvKodePos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RegisterActivity.this, CariKodePosActivity.class);
+                startActivity(i);
+            }
+        });
         btnAddPendidikan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

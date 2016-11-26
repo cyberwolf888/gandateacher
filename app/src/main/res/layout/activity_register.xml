@@ -156,6 +156,13 @@
                 android:textColor="@color/colorNormalWhite"
                 android:textColorHighlight="@color/colorNormalWhite" />
         </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutKodePos"
+            android:text="Silahkan klik disini untuk mencari kode pos anda"
+            android:textColor="@color/colorNormalWhite"
+            android:id="@+id/tvKodePos"/>
 
         <!--
         //Zone
@@ -201,7 +208,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
             android:text="Silakan pilih tingkat pendidikan yang ingin anda ajar (bisa pilih lebih dari 1)"
-            android:layout_below="@+id/layoutKodePos"
+            android:layout_below="@+id/tvKodePos"
             android:id="@+id/tvTingkatPendidikan"
         />
         <Button
