@@ -227,6 +227,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+        if (id == R.id.action_contact) {
+            Intent i = new Intent(MainActivity.this,ContactActivity.class);
+            startActivity(i);
+        }
         if (id == R.id.action_logout) {
             String url = new RequestServer().getServer_url()+"deleteNotif";
             Ion.with(MainActivity.this)

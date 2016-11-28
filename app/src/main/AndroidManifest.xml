@@ -45,7 +45,8 @@
         <activity android:name=".CancelActivity" />
         <activity android:name=".VerifyAlamatActivity" />
         <activity android:name=".PilihCabangActivity" />
-        <activity android:name=".CariKodePosActivity"></activity>
+        <activity android:name=".CariKodePosActivity" />
+        <activity android:name=".ContactActivity"></activity>
     </application>
 
 </manifest>
