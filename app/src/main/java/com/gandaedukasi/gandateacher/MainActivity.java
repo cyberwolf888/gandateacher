@@ -127,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
             JsonObject jsonReq = new JsonObject();
             jsonReq.addProperty("user_id", session.getUserId());
+            jsonReq.addProperty("version", BuildConfig.VERSION_NAME);
             Log.d("Cek Req",">"+jsonReq);
 
             Ion.with(MainActivity.this)

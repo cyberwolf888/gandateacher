@@ -113,5 +113,28 @@
             android:textColor="@color/colorPrimary"
             android:background="@drawable/buttonround"
             android:gravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forget your password?"
+            android:textSize="18dp"
+            android:layout_below="@+id/buttonReg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/colorNormalWhite"
+            android:id="@+id/tvForget"
+            />
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonForget"
+            android:text="Reset Password"
+            android:layout_below="@+id/tvForget"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/buttonround"
+            android:gravity="center" />
     </RelativeLayout>
 </ScrollView>

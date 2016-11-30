@@ -22,7 +22,7 @@ import com.koushikdutta.ion.Ion;
 import com.onesignal.OneSignal;
 
 public class LoginActivity extends AppCompatActivity {
-    Button btnLoggin, btnReg;
+    Button btnLoggin, btnReg, btnReset;
     EditText textEmail, textPassword;
     ProgressDialog pDialog;
     Session session;
@@ -39,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLoggin = (Button)findViewById(R.id.buttonLogin);
         btnReg = (Button)findViewById(R.id.buttonReg);
+        btnReset = (Button)findViewById(R.id.buttonForget);
         textEmail = (EditText)findViewById(R.id.editEmail);
         textPassword = (EditText)findViewById(R.id.editPassword);
 
@@ -53,6 +54,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, ResetPasswordActivity.class);
                 startActivity(i);
             }
         });
@@ -104,6 +113,8 @@ public class LoginActivity extends AppCompatActivity {
                 jsonReq.addProperty("email", email);
                 jsonReq.addProperty("password", password);
                 jsonReq.addProperty("type", "PG");
+                jsonReq.addProperty("version", BuildConfig.VERSION_NAME);
+                Log.d("Cek Req",">"+jsonReq);
 
                 Ion.with(LoginActivity.this)
                         .load(url)

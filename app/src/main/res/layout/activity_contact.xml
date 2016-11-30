@@ -29,12 +29,19 @@
         android:id="@+id/textView3" />
 
     <TextView
-        android:text="082247464196"
+        android:text="0821-4456-0004"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorNormalWhite"
         android:textSize="25dp"
         android:id="@+id/textView4" />
+    <TextView
+        android:text="0878-6004-3300"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorNormalWhite"
+        android:textSize="25dp"
+        android:id="@+id/textView7" />
 
     <TextView
         android:text="Email:"
@@ -45,7 +52,7 @@
         android:id="@+id/textView5" />
 
     <TextView
-        android:text="help@edukezy.com"
+        android:text="info@edukezy.com"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorNormalWhite"
