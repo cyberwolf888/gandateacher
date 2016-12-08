@@ -237,9 +237,9 @@
                 android:id="@+id/etKelebihanWaktu"
                 android:text="0"
                 android:inputType="numberDecimal"
-                android:textColorHint="@color/colorPrimary"
-                android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/colorPrimary"/>
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -256,9 +256,9 @@
                 android:hint="Keterangan"
                 android:id="@+id/etKeterangan"
                 android:inputType="textCapSentences"
-                android:textColorHint="@color/colorPrimary"
-                android:textColor="@color/colorPrimary"
-                android:textColorHighlight="@color/colorPrimary"/>
+                android:textColorHint="@color/colorNormalWhite"
+                android:textColor="@color/colorNormalWhite"
+                android:textColorHighlight="@color/colorNormalWhite"/>
         </android.support.design.widget.TextInputLayout>
 
         <Button
